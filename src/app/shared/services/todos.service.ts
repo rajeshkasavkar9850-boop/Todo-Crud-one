@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Itodo } from "../model/todos.model";
+import { Itodo, ItodoRes } from "../model/todos.model";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 
@@ -43,5 +43,14 @@ fetchTodos():Observable<Itodo[]>{
 // fetchTodos():Observable<any>{
 //   return this.http.get('https://jsonplaceholder.typicode.com/todos') // it return >> Obsevable
 // }
+
+ addTodo(todo:Itodo):Observable<ItodoRes>{
+  this.todosArr.push(todo)
+  let res = {
+    msg : `New todo item "${todo.todoItem}" added successfully!!`,
+    data : todo
+  }
+  return of(res)
+ }
 
 }
