@@ -1,1 +1,32 @@
-<p>todo-form works!</p>
+
+
+
+<div class="card mt-5">
+    <div class="card-body">
+        <h3 class="text-center p-3 bg-primary">{{isInEditMode? 'Update Todo' : 'Add Todo'}}</h3>
+        <form #todoFrom="ngForm" (ngSubmit)="onTodoSubmit()">
+            <div class="form-group">
+                <label for="todoItem">Todo Item</label>
+                <input type="text" ngModel #todoItem="ngModel" name="todoItem" required class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit"
+                    [disabled]="todoFrom.invalid"
+                     *ngIf="!isInEditMode" 
+                    mat-raised-button color="primary" class="w-100">
+                 Add Todo
+               </button>
+
+                <button type="button"
+                  (click)="onUpdate()"
+                  [disabled]="todoFrom.invalid"
+                  *ngIf="isInEditMode" 
+                  mat-raised-button color="primary" class="w-100">
+                   Update Todo
+              </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>

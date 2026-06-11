@@ -8,13 +8,15 @@ import { TodoDashboardComponent } from './shared/component/todo-dashboard/todo-d
 import { TodoFormComponent } from './shared/component/todo-form/todo-form.component';
 import { TodoListComponent } from './shared/component/todo-list/todo-list.component';
 import { MaterialModule } from './shared/material/todos.material';
+import { GetConfirmComponent } from './shared/component/get-confirm/get-confirm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoDashboardComponent,
     TodoFormComponent,
-    TodoListComponent
+    TodoListComponent,
+    GetConfirmComponent
   ],
   imports: [
     BrowserModule,
