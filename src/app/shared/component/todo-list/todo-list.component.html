@@ -1,0 +1,21 @@
+
+
+<ul class="list-group">
+    <li *ngFor="let todo of todosArr"
+    class="list-group-item d-flex justify-content-between">
+         <strong>{{todo.todoItem}}</strong>
+
+         <div>
+             <button class="me-2" mat-mini-fab color="primary">
+                <mat-icon>edit</mat-icon>
+             </button>
+
+             <button mat-mini-fab color="warn">
+                <mat-icon>delete</mat-icon>
+             </button>
+        </div>
+    </li>
+
+    
+</ul>
+
